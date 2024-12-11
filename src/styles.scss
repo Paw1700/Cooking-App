@@ -323,6 +323,7 @@ body {
     font-style: normal;
     line-height: normal;
     color: var(--font-color);
+	background: url('/app_background.webp');
 
     input,
 	button {
@@ -340,7 +341,6 @@ div.PAGE {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: var(--app-bg);
 	overflow-y: scroll;
 	overflow-x: hidden;
 	display: flex;

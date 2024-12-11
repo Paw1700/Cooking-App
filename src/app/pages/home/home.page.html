@@ -1,0 +1,20 @@
+<div class="PAGE">
+    <p class="APP_TITLE">Cooking App</p>
+    <p class="PAGE_TITLE">KATEGORIE</p>
+    <div class="CATEGORY_LIST">
+        <div class="CATEGORY">
+            <wide_text_bar (click)="close()" [text]="'BABECZKI'" />
+            <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
+                <wide_text_subbar [text]="'PIZZA'" />
+                <add_button [description]="'DODAJ PODKATEGORIE'" />
+            </div>
+        </div>
+        <div class="CATEGORY">
+            <wide_text_bar (click)="close()" [text]="'BABECZKI'" />
+            <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
+                <wide_text_subbar [text]="'PIZZA'" />
+                <add_button [description]="'DODAJ PODKATEGORIE'" />
+            </div>
+        </div>
+    </div>
+</div>

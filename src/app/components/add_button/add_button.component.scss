@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    transition: transform .2s ease-in-out;
+
+    img {
+        height: 1rem;
+        object-fit: contain;
+    }
+
+    p.DESC {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--app-accent);
+    }
+}

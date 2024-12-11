@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "ng serve --port 4202",
     "ssl_show": "ng serve --ssl --disable-host-check --port 1704",
-    "show": "ng serve --disable-host-check --port 1704"
+    "show": "ng serve --host 192.168.100.133 --disable-host-check --port 1704"
   },
   "private": true,
   "dependencies": {
