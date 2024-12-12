@@ -324,6 +324,8 @@ body {
     line-height: normal;
     color: var(--font-color);
 	background: url('/app_background.webp');
+	background-color: var(--app-bg);
+	overflow: hidden;
 
     input,
 	button {
@@ -350,7 +352,7 @@ div.PAGE {
 }
 
 :root {
-	--app-bg: #fff;
+	--app-bg: #f6f6f6;
 	--app-accent: #C35C58;
     --app-secondary: #7A4B00;
     --app-box-bg: #FFCBC9;

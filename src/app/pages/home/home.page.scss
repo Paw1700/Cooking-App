@@ -28,6 +28,8 @@ div.PAGE {
         justify-content: flex-start;
         gap: .7rem;
         width: 100%;
+        overflow-y: scroll;
+        padding-bottom: 5rem;
 
         div.CATEGORY {
             width: 100%;
