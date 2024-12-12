@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    transition: transform .2s ease-in-out;
+    border: 2px solid var(--app-box-bg-secondary);
+    
+    color: var(--app-box-bg-secondary);
+    padding: .6rem;
+    border-radius: .6rem;
+    transition: all .2s ease-in-out;
+
+    &.ACTIVE {
+        background-color: var(--app-box-bg);
+        color: var(--font-color);
+        border: none;
+    }
+
+    p.TEXT {
+        font-size: 1.17rem;
+        font-weight: 600;
+    }
+}

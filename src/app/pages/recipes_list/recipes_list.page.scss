@@ -1,0 +1,34 @@
+div.PAGE {
+    p.RECIPES_LIST_CATEGORY_NAME {
+        color: var(--app-accent);
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .6rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    div.SUBCATEGORIES_LIST {
+        width: 100%;
+        overflow-x: scroll;
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    div.RECIPES_LIST {
+        width: 100%;
+        height: 70vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5rem;
+    }
+}
