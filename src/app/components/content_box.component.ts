@@ -16,7 +16,7 @@ import { Component } from "@angular/core";
             gap: .73rem;
             align-items: center;
             justify-content: center;
-            background-color: var(--app-box-bg);
+            background-color: var(--app-box-bg-secondary);
         }
     `
 })

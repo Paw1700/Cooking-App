@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { SectionTitle } from "./components/section_title.component";
-import { Ingredients } from "./components/ingredients/ingredients.component";
+import { IngredientsBox } from "./components/ingredients_box/ingredients_box.component";
 import { StepsBox } from "./components/steps_box/steps.component";
 
 @Component({
@@ -9,7 +9,7 @@ import { StepsBox } from "./components/steps_box/steps.component";
     styleUrl: './recipe.page.scss',
     imports: [
         SectionTitle,
-        Ingredients,
+        IngredientsBox,
         StepsBox
     ]
 })
