@@ -1,4 +1,16 @@
 div.PAGE {
+    input.RECIPE_TITLE_EDIT_BOX {
+        width: calc(100% - 1.2rem);
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--app-accent);
+        background-color: var(--app-box-bg-secondary);
+        padding-inline: .6rem;
+        padding-block: .6rem;
+        border-radius: 1.17rem;
+    }
+
     p.RECIPE_TITLE {
         width: 100%;
         text-align: center;
@@ -7,12 +19,35 @@ div.PAGE {
         color: var(--app-accent);
     }
 
-    img.RECIPE_PHOTO {
+    div.RECIPE_PHOTO_CONTAINER {
         width: 17.65rem;
-        height: 17.65rem;
-        object-fit: cover;
+        min-height: 17.65rem;
         border-radius: 1.5rem;
+        overflow: hidden;
+        position: relative;
+        background-color: var(--app-box-bg-secondary);
+
+        img.RECIPE_PHOTO_EDIT_ICON,
+        img.RECIPE_PHOTO {
+            width: 17.65rem;
+            height: 17.65rem;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        img.RECIPE_PHOTO_EDIT_ICON {
+            z-index: 1;
+            opacity: .5;
+            transform: scale(.42);
+        }
+
+        img.RECIPE_PHOTO {
+            z-index: 0;
+        }
     }
+
 
     p.SECTION_TITLE {
         width: 100%;

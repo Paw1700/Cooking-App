@@ -1,8 +1,17 @@
 <div class="PAGE">
-    <p class="RECIPE_TITLE">Babeczka z pudrem i owocami</p>
-    <img class="RECIPE_PHOTO" src="/example_photo.webp">
-     <section_title>SKŁADNIKI</section_title>
-     <ingredients_box />
-     <section_title>KROKI</section_title>
-     <steps_box />
+    @if (edit_mode) {
+        <input class="RECIPE_TITLE_EDIT_BOX" type="text" placeholder="Tytuł przepisu">
+    } @else {
+        <p class="RECIPE_TITLE">Babeczka z pudrem i owocami</p>
+    }
+    <div class="RECIPE_PHOTO_CONTAINER">
+        @if (edit_mode) {
+            <img class="RECIPE_PHOTO_EDIT_ICON" src="/camera.webp">
+        }
+        <img class="RECIPE_PHOTO" src="/example_photo.webp">
+    </div>
+    <section_title>SKŁADNIKI</section_title>
+    <ingredients_box />
+    <section_title>KROKI</section_title>
+    <steps_box />
 </div>
