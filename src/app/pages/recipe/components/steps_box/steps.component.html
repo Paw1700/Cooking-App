@@ -2,10 +2,17 @@
     @for(item of test_list; track $index) {
         <div class="STEP">
             <p class="NUMBER">{{ $index + 1 }}.</p>
-            <p class="DESCRIPTION">Opis kroku</p>
+            @if (edit_mode) {
+                <input type="text" placeholder="OPIS KROKU">
+            } @else {
+                <p class="DESCRIPTION">Opis kroku</p>
+            }
         </div>
         @if ($index != test_list.length - 1) {
             <div class="BREAK_LINE"></div>
         }
+    }
+    @if (edit_mode) {
+        <add_button [description]="'DODAJ KROK'" />
     }
 </content_box>

@@ -1,11 +1,19 @@
 <content_box>
     @for (item of test_list; track $index) {
         <div class="INGREDIENT">
-            <p class="NAME">Maka</p>
-            <p class="AMOUNT">300g</p>
+            @if (edit_mode) {
+                <input type="text" placeholder="NAZWA">
+                <input type="text" placeholder="ILOŚĆ">
+            } @else {
+                <p class="NAME">Maka</p>
+                <p class="AMOUNT">300g</p>
+            }
         </div>
         @if ($index != test_list.length - 1) {
             <div class="BREAK_LINE"></div>
         }
+    }
+    @if (edit_mode) {
+        <add_button [description]="'DODAJ SKŁADNIK'" />
     }
 </content_box>
