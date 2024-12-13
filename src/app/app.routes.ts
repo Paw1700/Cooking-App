@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
 import { HomePage } from './pages/home/home.page';
 import { RecipesListPage } from './pages/recipes_list/recipes_list.page';
+import { RecipePage } from './pages/recipe/recipe.page';
 
 export const routes: Routes = [
     {
-        path: '',
+        path: 'home',
         pathMatch: 'full',
         component: HomePage,
         data: {
@@ -18,5 +19,17 @@ export const routes: Routes = [
         data: {
             page_name: 'recipes_list'
         }
+    },
+    {
+        path: 'recipe',
+        pathMatch: 'full',
+        component: RecipePage,
+        data: {
+            page_name: 'recipe'
+        }
+    },
+    {
+        path: "**",
+        redirectTo: 'home'
     }
 ];

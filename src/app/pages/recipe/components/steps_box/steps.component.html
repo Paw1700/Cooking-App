@@ -1,0 +1,11 @@
+<content_box>
+    @for(item of test_list; track $index) {
+        <div class="STEP">
+            <p class="NUMBER">{{ $index + 1 }}.</p>
+            <p class="DESCRIPTION">Opis kroku</p>
+        </div>
+        @if ($index != test_list.length - 1) {
+            <div class="BREAK_LINE"></div>
+        }
+    }
+</content_box>

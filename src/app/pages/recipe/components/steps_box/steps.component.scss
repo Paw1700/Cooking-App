@@ -1,0 +1,16 @@
+:host {
+    div.STEP {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        font-size: 1.25rem;
+        gap: .5rem;
+    }
+
+    div.BREAK_LINE {
+        width: 100%;
+        border: .5px solid rgba(black, .25);
+    }
+}

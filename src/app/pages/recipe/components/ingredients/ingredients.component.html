@@ -1,0 +1,9 @@
+@for (item of test_list; track $index) {
+    <div class="INGREDIENT">
+        <p class="NAME">Maka</p>
+        <p class="AMOUNT">300g</p>
+    </div>
+    @if ($index != test_list.length - 1) {
+        <div class="BREAK_LINE"></div>
+    }
+}
