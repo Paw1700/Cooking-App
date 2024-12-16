@@ -1,0 +1,1 @@
+export type AppLocations = 'home' | 'recipes_list' | 'recipe'

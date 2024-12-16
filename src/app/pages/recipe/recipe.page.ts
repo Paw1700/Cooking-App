@@ -14,5 +14,5 @@ import { StepsBox } from "./components/steps_box/steps.component";
     ]
 })
 export class RecipePage {
-    edit_mode = true
+    edit_mode = false
 }
