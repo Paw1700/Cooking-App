@@ -2,12 +2,14 @@ import { Injectable } from "@angular/core";
 import { AppLocations } from "./models";
 import { Router } from "@angular/router";
 import { APP_APPERANCE_SERVICE } from "./services/apperance.service";
+import { APP_STATE_SERVICE } from "./services/state.service";
 
 @Injectable()
 export class APP_SERVICE {
     constructor(
         private ROUTER: Router,
         public APPERANCE: APP_APPERANCE_SERVICE,
+        public STATE: APP_STATE_SERVICE
     ) { }
 
     startApp() {

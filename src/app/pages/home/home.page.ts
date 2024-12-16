@@ -1,8 +1,9 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { WideTextBar } from "../../components/wide_text_bar/wide_text_bar.component";
 import { WideTextSubBar } from "../../components/wide_text_subbar/wide_text_subbar.component";
 import { AddButton } from "../../components/add_button/add_button.component";
 import { animate, state, style, transition, trigger } from "@angular/animations";
+import { APP_SERVICE } from "../../app.service";
 
 @Component({
     selector: 'home_page',
@@ -27,9 +28,15 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
     ]
 })
 export class HomePage {
+    private APP = inject(APP_SERVICE)
+
     open_sub = false
 
     close(){
         this.open_sub = !this.open_sub
+    }
+
+    navigateToCategory() {
+        this.APP.navigate('recipes_list')
     }
 }

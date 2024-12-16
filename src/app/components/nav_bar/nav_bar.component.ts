@@ -23,6 +23,20 @@ export class NavBar extends NgUnsubscriber implements OnInit {
         this.listenToNavBarState()
     }
 
+    nav_bar_clicked(side: 'left' | 'center' | 'right') {
+        switch(side) {
+            case "left":
+                this.APP.STATE.nav_bar_left_side_clicked.next(this.left_side_option)
+                break
+            case "center":
+                this.APP.STATE.nav_bar_center_side_clicked.next(this.center_side_option)
+                break
+            case "right":
+                this.APP.STATE.nav_bar_right_side_clicked.next(this.right_side_option)
+                break
+        }
+    }
+
     private listenToNavBarState() {
         this.APP.APPERANCE.nav_bar_left_side_icon_option.pipe(takeUntil(this.ngUnsubscriber$)).subscribe( state => {
             this.left_side_option = state

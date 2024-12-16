@@ -1,10 +1,10 @@
 <div class="LEFT">
-    <nav_bar_icon [icon_type]="left_side_option" />
+    <nav_bar_icon (click)="nav_bar_clicked('left')" [icon_type]="left_side_option" />
 </div>
 <div class="CENTER">
-    <nav_bar_icon [icon_type]="center_side_option" />
+    <nav_bar_icon (click)="nav_bar_clicked('center')" [icon_type]="center_side_option" />
 </div>
 <div class="RIGHT">
-    <nav_bar_icon [icon_type]="right_side_option" />
+    <nav_bar_icon (click)="nav_bar_clicked('right')" [icon_type]="right_side_option" />
 </div>
 <div class="BG_FADE"></div>

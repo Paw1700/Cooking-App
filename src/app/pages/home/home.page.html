@@ -2,7 +2,7 @@
     <p class="APP_TITLE">Cooking App</p>
     <p class="PAGE_TITLE">KATEGORIE</p>
     <div class="CATEGORY_LIST">
-        <div class="CATEGORY">
+        <div (click)="navigateToCategory()" class="CATEGORY">
             <wide_text_bar (click)="close()" [text]="'BABECZKI'" />
             <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
                 <wide_text_subbar [text]="'PIZZA'" />

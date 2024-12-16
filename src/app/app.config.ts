@@ -6,6 +6,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { APP_SERVICE } from './app.service';
 import { APP_APPERANCE_SERVICE } from './services/apperance.service';
+import { APP_STATE_SERVICE } from './services/state.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,7 @@ export const appConfig: ApplicationConfig = {
     
     // ** SERVICES **
     APP_SERVICE,
+    APP_STATE_SERVICE,
     APP_APPERANCE_SERVICE
 
   ]
