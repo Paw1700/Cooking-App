@@ -7,6 +7,8 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { APP_SERVICE } from './app.service';
 import { APP_APPERANCE_SERVICE } from './services/apperance.service';
 import { APP_STATE_SERVICE } from './services/state.service';
+import { APP_STORAGE_SERVICE } from './services/storage.service';
+import { DatabaseManager } from './util/db.driver';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,7 +24,10 @@ export const appConfig: ApplicationConfig = {
     // ** SERVICES **
     APP_SERVICE,
     APP_STATE_SERVICE,
-    APP_APPERANCE_SERVICE
+    APP_APPERANCE_SERVICE,
+    APP_STORAGE_SERVICE,
 
+    // ** UTILS **
+    DatabaseManager
   ]
 };
