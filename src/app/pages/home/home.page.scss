@@ -30,6 +30,11 @@ div.PAGE {
             justify-content: flex-start;
             gap: .6rem;
 
+            wide_bar {
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+
             div.SUBCATEGORIES {
                 width: 100%;
                 display: flex;
@@ -38,6 +43,11 @@ div.PAGE {
                 justify-content: flex-start;
                 gap: .6rem;
                 overflow: hidden;
+
+                sub_bar {
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                }
             }
         }
     }

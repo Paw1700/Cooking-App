@@ -4,8 +4,7 @@ import { Component, HostBinding, HostListener, Input } from "@angular/core";
     selector: '',
     template: ''
 })
-export class TextBar {
-    @Input({required: true}) text: string = ''
+export class Bar {
     @Input() block_scale_up_animation = false
     @HostBinding('style.transform') scale = 'scale(1)'
     @HostListener('click') clickAnimation() {

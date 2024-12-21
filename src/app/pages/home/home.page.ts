@@ -1,16 +1,16 @@
 import { Component, inject } from "@angular/core";
-import { WideTextBar } from "../../components/wide_text_bar/wide_text_bar.component";
-import { WideTextSubBar } from "../../components/wide_text_subbar/wide_text_subbar.component";
 import { AddButton } from "../../components/add_button/add_button.component";
 import { animate, state, style, transition, trigger } from "@angular/animations";
 import { APP_SERVICE } from "../../app.service";
+import { WideBar } from "../../components/wide_bar.component";
+import { SubBar } from "../../components/sub_bar.component";
 
 @Component({
     selector: 'home_page',
     standalone: true,
     imports: [
-    WideTextBar,
-    WideTextSubBar,
+    WideBar,
+    SubBar,
     AddButton
 ],
     templateUrl: './home.page.html',
@@ -30,7 +30,7 @@ import { APP_SERVICE } from "../../app.service";
 export class HomePage {
     private APP = inject(APP_SERVICE)
 
-    open_sub = false
+    open_sub = true
 
     close(){
         this.open_sub = !this.open_sub

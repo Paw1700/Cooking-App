@@ -2,17 +2,10 @@
     <p class="APP_TITLE">Cooking App</p>
     <p class="PAGE_TITLE">KATEGORIE</p>
     <div class="CATEGORY_LIST">
-        <div (click)="navigateToCategory()" class="CATEGORY">
-            <wide_text_bar (click)="close()" [text]="'BABECZKI'" />
-            <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
-                <wide_text_subbar [text]="'PIZZA'" />
-                <add_button [description]="'DODAJ PODKATEGORIE'" />
-            </div>
-        </div>
         <div class="CATEGORY">
-            <wide_text_bar (click)="close()" [text]="'BABECZKI'" />
+            <wide_bar>BABECZKI</wide_bar>
             <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
-                <wide_text_subbar [text]="'PIZZA'" />
+                <sub_bar>PIZZA</sub_bar>
                 <add_button [description]="'DODAJ PODKATEGORIE'" />
             </div>
         </div>
