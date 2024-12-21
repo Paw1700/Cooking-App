@@ -1,0 +1,73 @@
+div.BOX_BG {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+
+    div.ADD_BOX {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: .6rem;
+        background-color: var(--app-box-bg);
+        border-radius: .88rem;
+        padding: 1rem;
+        width: calc(100% - 4rem);
+
+        p.TITLE {
+            font-size: 1.25rem;
+            font-weight: 700;
+            width: 100%;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            padding: .6rem;
+            border-radius: .6rem;
+            background-color: var(--app-box-bg-secondary);
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        div.USER_ACTIONS {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: .6rem;
+
+            button {
+                width: 100%;
+                padding: .6rem;
+                border-radius: .6rem;
+                font-size: 1.25rem;
+                font-weight: 600;
+
+                &.CANCEL {
+                    border: .12rem solid var(--app-accent);
+                    color: var(--app-accent);
+                }
+
+                &.SAVE {
+                    background-color: var(--app-accent);
+                    color: white;
+                }
+            }
+        }
+    }
+}

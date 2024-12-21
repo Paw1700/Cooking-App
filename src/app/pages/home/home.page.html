@@ -2,12 +2,28 @@
     <p class="APP_TITLE">Cooking App</p>
     <p class="PAGE_TITLE">KATEGORIE</p>
     <div class="CATEGORY_LIST">
-        <div class="CATEGORY">
-            <wide_bar>BABECZKI</wide_bar>
-            <div [@SUBCATEGORIES]="open_sub" class="SUBCATEGORIES">
-                <sub_bar>PIZZA</sub_bar>
-                <add_button [description]="'DODAJ PODKATEGORIE'" />
-            </div>
-        </div>
+        @if (categories_list == null) {
+            <dummy_wide_bar />
+            <dummy_wide_bar />
+            <dummy_wide_bar />
+            <dummy_wide_bar />
+            <dummy_wide_bar />
+            <dummy_wide_bar />
+        } @else {
+            @for(cat of categories_list; track cat.category.id) {
+                <div class="CATEGORY">
+                    <wide_bar (click)="openSubcategories($index)">{{ cat.category.name }}</wide_bar>
+                    <div [@SUBCATEGORIES]="cat.open" class="SUBCATEGORIES">
+                        @for(sub_cat of cat.subcategories; track sub_cat.id) {
+                            <sub_bar>{{ sub_cat.name }}</sub_bar>
+                        }
+                        <add_button (click)="openAddBox('subcategory')" [description]="'DODAJ PODKATEGORIE'" />
+                    </div>
+                </div>
+            } @empty {
+                <p class="EMPTY_LIST">Brak kategorii</p>
+            }
+        }
     </div>
 </div>
+<add_box [title]="add_box_title" [show]="show_add_box" (emited_data)="reactToAddBoxOutput($event)" />

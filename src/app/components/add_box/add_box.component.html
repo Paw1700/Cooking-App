@@ -1,0 +1,12 @@
+@if (show) {
+    <div class="BOX_BG">
+        <div class="ADD_BOX">
+            <p class="TITLE">{{ title }}</p>
+            <input type="text" placeholder="NAZWA" (input)="fetchUserInput($event)" />
+            <div class="USER_ACTIONS">
+                <button (click)="emitData('cancel')" class="CANCEL">ANULUJ</button>
+                <button (click)="emitData('save')" class="SAVE">ZAPISZ</button>
+            </div>
+        </div>
+    </div>
+}
