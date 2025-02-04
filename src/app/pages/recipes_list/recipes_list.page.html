@@ -1,33 +1,13 @@
 <div class="PAGE">
-    <p class="RECIPES_LIST_CATEGORY_NAME">BABECZKI</p>
+    <p class="RECIPES_LIST_CATEGORY_NAME">{{ category.name }}</p>
     <div class="SUBCATEGORIES_LIST HIDE_SCROLL_BAR">
-        <subcategory_bar [text]="'PIZZA'" />
-        <subcategory_bar [text]="'PIZZA'" />
-        <subcategory_bar [text]="'PIZZA'" />
-        <subcategory_bar [text]="'PIZZA'" />
-        <subcategory_bar [text]="'PIZZA'" />
+        @for(subcat of sub_categories; track subcat.id) {
+            <subcategory_bar [active_start_state]="selected_sub_categories.includes(subcat.id)" [text]="subcat.name" (active_state)="reactToSubcategoryChange(subcat.id, $event)" />
+        }
     </div>
     <div class="RECIPES_LIST HIDE_SCROLL_BAR">
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
-        <recipe_list_item />
+        @for (recipe of recipies; track recipe.id) {
+            <recipe_list_item  [item_data]="recipe" />
+        }
     </div>
 </div>

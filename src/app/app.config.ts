@@ -9,6 +9,7 @@ import { APP_APPERANCE_SERVICE } from './services/apperance.service';
 import { APP_STATE_SERVICE } from './services/state.service';
 import { APP_STORAGE_SERVICE } from './services/storage.service';
 import { DatabaseManager } from './util/db.driver';
+import { RECIPES_LIST_PAGE_RESOLVER } from '../resolvers/recipes_list_page.resolver';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,9 @@ export const appConfig: ApplicationConfig = {
     }),
     provideAnimations(),
     
+    // ** RESOLVERS **
+    RECIPES_LIST_PAGE_RESOLVER,
+
     // ** SERVICES **
     APP_SERVICE,
     APP_STATE_SERVICE,

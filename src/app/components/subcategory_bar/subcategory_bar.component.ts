@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostBinding, HostListener, Input, Output } from "@angular/core";
+import { Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output } from "@angular/core";
 import { Button } from "../../components_interfaces/button.component";
 
 @Component({
@@ -6,8 +6,9 @@ import { Button } from "../../components_interfaces/button.component";
     templateUrl: './subcategory_bar.component.html',
     styleUrl: './subcategory_bar.component.scss'
 })
-export class SubCategoryBar extends Button {
+export class SubCategoryBar extends Button implements OnInit{
     @Input({ required: true }) text: string = ''
+    @Input() active_start_state = false
     
     @Output() active_state = new EventEmitter<boolean>()
     
@@ -20,6 +21,10 @@ export class SubCategoryBar extends Button {
     click() {
         this.is_active = !this.is_active
         this.active_state.emit(this.is_active)
+    }
+
+    ngOnInit(): void {
+        this.is_active = this.active_start_state
     }
 
     is_active = false
