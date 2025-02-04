@@ -19,7 +19,7 @@ import { DummyWideBar } from "../../components/dummy_wide_bar.component";
     AddButton,
     AddBox,
     DummyWideBar
-],
+    ],
     templateUrl: './home.page.html',
     styleUrl: './home.page.scss',
     animations: [
@@ -62,6 +62,10 @@ export class HomePage extends NgUnsubscriber implements OnInit {
         this.show_add_box = true
         this.add_box_type = type
         this.adaptAddBoxTitleToType()
+    }
+
+    navigateToRecipesListPage(sub_category_id: string) {
+        this.APP.navigate('recipes_list', {sub_category_id: sub_category_id})
     }
 
     async reactToAddBoxOutput(output: string | null) {

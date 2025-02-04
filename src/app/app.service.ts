@@ -22,14 +22,18 @@ export class APP_SERVICE {
         })
     }
 
-    async navigate(location: AppLocations) {
+    async navigate(location: AppLocations, options?: any) {
         switch(location) {
             case "home":
                 await this.ROUTER.navigateByUrl("/home");
                 this.APPERANCE.setNavBarIconOptions(null, 'add', 'settings');
                 break;
             case "recipes_list":
-                await this.ROUTER.navigateByUrl("/recipes_list");
+                if (options.sub_category_id) {
+                    await this.ROUTER.navigate(["/recipes_list"], {queryParams: {sub_category_id: options.sub_category_id}});
+                } else {
+                    await this.ROUTER.navigateByUrl("/recipes_list");
+                }
                 this.APPERANCE.setNavBarIconOptions("back", 'add', 'settings');
                 break;
             case "recipe":

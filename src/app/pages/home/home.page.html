@@ -15,7 +15,7 @@
                     <wide_bar (click)="openSubcategories($index)">{{ cat.category.name }}</wide_bar>
                     <div [@SUBCATEGORIES]="cat.open" class="SUBCATEGORIES">
                         @for(sub_cat of cat.subcategories; track sub_cat.id) {
-                            <sub_bar>{{ sub_cat.name }}</sub_bar>
+                            <sub_bar (click)="navigateToRecipesListPage(sub_cat.id)" >{{ sub_cat.name }}</sub_bar>
                         }
                         <add_button (click)="openAddBox('subcategory')" [description]="'DODAJ PODKATEGORIE'" />
                     </div>
