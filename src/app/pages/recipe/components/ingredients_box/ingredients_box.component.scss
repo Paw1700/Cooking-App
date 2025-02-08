@@ -15,6 +15,10 @@
         p.AMOUNT {
             font-weight: 300;
         }
+
+        &:not(:last-of-type) {
+            border-bottom: .5px solid rgba(black, .25);
+        }
     }
 
     div.BREAK_LINE {

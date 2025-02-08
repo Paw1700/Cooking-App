@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomePage } from './pages/home/home.page';
 import { RecipesListPage } from './pages/recipes_list/recipes_list.page';
 import { RecipePage } from './pages/recipe/recipe.page';
-import { RECIPES_LIST_PAGE_RESOLVER } from '../resolvers/recipes_list_page.resolver';
+import { RECIPES_LIST_PAGE_RESOLVER } from './pages/recipes_list/recipes_list.page.resolver';
 
 export const routes: Routes = [
     {
@@ -29,8 +29,7 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: RecipePage,
         data: {
-            page_name: 'recipe',
-            adding: false
+            page_name: 'recipe'
         }
     },
     {

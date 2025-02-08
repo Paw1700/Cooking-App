@@ -40,7 +40,10 @@ export class RecipePage extends NgUnsubscriber implements OnInit {
     selector_items: SubcategorySelectorItem[] = []
 
     async ngOnInit() {
-        this.edit_mode = this.ROUTE.snapshot.data['adding'];
+        this.edit_mode = this.ROUTE.snapshot.data['adding'] ? this.ROUTE.snapshot.data['adding'] : false;
+        if (this.edit_mode) {
+            // !!! FETCH DATA FROM ROUTE RESOLVED DATA
+        }
         this.selector_items = await this.getSubcategorySelectorData()
         this.reactToNavBarBtnClicked()
     }

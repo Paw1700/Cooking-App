@@ -7,10 +7,9 @@
         width: 100%;
         font-size: 1.25rem;
         gap: .5rem;
-    }
 
-    div.BREAK_LINE {
-        width: 100%;
-        border: .5px solid rgba(black, .25);
+        &:not(:last-of-type) {
+            border-bottom: .5px solid rgba(black, .25);
+        }
     }
 }

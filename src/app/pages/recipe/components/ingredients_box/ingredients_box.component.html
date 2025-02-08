@@ -1,19 +1,16 @@
 <content_box>
-    @for (item of test_list; track $index) {
+    @for (item of ingredients_list; track $index) {
         <div class="INGREDIENT">
             @if (edit_mode) {
-                <input type="text" placeholder="NAZWA">
-                <input type="text" placeholder="ILOŚĆ">
+                <input type="text" placeholder="NAZWA" (change)="changeIngredientData($index, 'name', $event)">
+                <input type="text" placeholder="ILOŚĆ" (change)="changeIngredientData($index, 'amount', $event)">
             } @else {
-                <p class="NAME">Maka</p>
-                <p class="AMOUNT">300g</p>
+                <p class="NAME">{{ item.name }}</p>
+                <p class="AMOUNT">{{ item.amount }}</p>
             }
         </div>
-        @if ($index != test_list.length - 1) {
-            <div class="BREAK_LINE"></div>
-        }
     }
     @if (edit_mode) {
-        <add_button [description]="'DODAJ SKŁADNIK'" />
+        <add_button (click)="addIngredient()" [description]="'DODAJ SKŁADNIK'" />
     }
 </content_box>

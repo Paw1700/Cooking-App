@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRouteSnapshot, MaybeAsync, RedirectCommand, Resolve, Router, RouterStateSnapshot } from "@angular/router";
-import { Category, SubCategory } from "../app/models";
-import { APP_SERVICE } from "../app/app.service";
+import { Category, SubCategory } from "../../models";
+import { APP_SERVICE } from "../../app.service";
 
 @Injectable()
 export class RECIPES_LIST_PAGE_RESOLVER implements Resolve<RecipeListPageResolvedData> {
