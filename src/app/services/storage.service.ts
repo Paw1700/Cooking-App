@@ -28,11 +28,13 @@ export class APP_STORAGE_SERVICE {
                     this.DB_NAME,
                     this.DB_VERSION,
                     Object.getOwnPropertyNames(this.DB_STORES),
-                    true
+                    false
                 );
                 resolve()
-            } catch {
+            } catch (err) {
                 // ! reject(new Error('DB-CONNECT-ERROR'));
+                console.error(err);
+                
                 console.error('DB creation error!')
             }
         })
@@ -73,6 +75,8 @@ export class APP_STORAGE_SERVICE {
                 resolve(await this.DB.getAllObject(this.DB_STORES.category))
             } catch (err) {
                 // ! CREATE ERROR CODE !
+                console.error(err);
+                
                 console.error('Error during get all categories!')
             }
         })

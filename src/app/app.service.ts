@@ -15,10 +15,11 @@ export class APP_SERVICE {
     ) { }
 
     startApp() {
-        return new Promise(async (resolve) => {
+        return new Promise<void>(async (resolve) => {
             //? this.APPERANCE.restart()
             await this.STORAGE.init()
-            await this.navigate('home')
+            await this.navigate('add_recipe')
+            resolve()
         })
     }
 
@@ -29,7 +30,7 @@ export class APP_SERVICE {
                 this.APPERANCE.setNavBarIconOptions(null, 'add', 'settings');
                 break;
             case "recipes_list":
-                if (options.sub_category_id) {
+                if (options && options.sub_category_id) {
                     await this.ROUTER.navigate(["/recipes_list"], {queryParams: {sub_category_id: options.sub_category_id}});
                 } else {
                     await this.ROUTER.navigateByUrl("/recipes_list");
@@ -39,6 +40,10 @@ export class APP_SERVICE {
             case "recipe":
                 await this.ROUTER.navigateByUrl("/recipe");
                 this.APPERANCE.setNavBarIconOptions("back", null, 'edit');
+                break;
+            case 'add_recipe':
+                await this.ROUTER.navigateByUrl("/add_recipe");
+                this.APPERANCE.setNavBarIconOptions("back", null, 'save');
                 break;
         }
     }

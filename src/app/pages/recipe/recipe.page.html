@@ -1,6 +1,7 @@
 <div class="PAGE">
     @if (edit_mode) {
         <input class="RECIPE_TITLE_EDIT_BOX" type="text" placeholder="Tytuł przepisu">
+        <sub_category_selector [selector_items]="selector_items" />
     } @else {
         <p class="RECIPE_TITLE">Babeczka z pudrem i owocami</p>
     }
@@ -11,7 +12,7 @@
         <img class="RECIPE_PHOTO" src="/example_photo.webp">
     </div>
     <section_title>SKŁADNIKI</section_title>
-    <ingredients_box />
+    <ingredients_box [edit_mode]="edit_mode" />
     <section_title>KROKI</section_title>
-    <steps_box />
+    <steps_box [edit_mode]="edit_mode" />
 </div>

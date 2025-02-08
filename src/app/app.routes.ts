@@ -29,7 +29,17 @@ export const routes: Routes = [
         pathMatch: 'full',
         component: RecipePage,
         data: {
-            page_name: 'recipe'
+            page_name: 'recipe',
+            adding: false
+        }
+    },
+    {
+        path: 'add_recipe',
+        pathMatch: 'full',
+        component: RecipePage,
+        data: {
+            page_name: 'recipe',
+            adding: true
         }
     },
     {

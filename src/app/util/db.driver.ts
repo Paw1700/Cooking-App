@@ -57,7 +57,7 @@ export class DatabaseManager {
                     return 
                 }
                 const openRequest = this.IndexedDB.open(dbName, dbVersion)
-                openRequest.onerror = () => {
+                openRequest.onerror = (event) => {
                     console.error('Error during creating DB!')
                     reject()
                 }
@@ -78,6 +78,7 @@ export class DatabaseManager {
                     this.dbConnectionExist = true
                     try {
                         if (clearIndex) {
+                            console.log('Clearing IndexGeneratorData Index...');
                             await this.CLEAR_IGD()
                             await this.CHECK_IGD_INTEGRITY()
                         }

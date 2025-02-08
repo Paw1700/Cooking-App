@@ -1,0 +1,22 @@
+<div class="SELECTED_SUB_CATEGORY" (click)="changeOpenessState()">
+    @if (selected_subcategory != null) {
+        <p class="SELECTED_SUB_CATEGORY_NAME" [class.OPEN]="openess_state || (selected_subcategory != null && selected_category != null)">{{ selected_category?.name }} {{ selected_subcategory.name }}</p>
+    } @else {
+        <p class="SELECTED_SUB_CATEGORY_NAME" [class.OPEN]="openess_state">KATEGORIA</p>
+    }
+    <img src="/arrow.webp" [class.ROT_ARROW]="openess_state" [class.OPEN]="openess_state || selected_subcategory != null" />
+</div>
+
+@if (openess_state) {
+    <div class="SUB_CATEGORY_SELECTOR" [@SELECTOR]>
+        @for (item of selector_items; track $index) {
+            <p class="CATEGORY_NAME">{{ item.category.name }}</p>
+            @for (sub_item of item.subcategories; track sub_item.id) {
+                <p class="SUB_CATEGORY_NAME" (click)="setSubcategory(item.category ,sub_item)">{{ sub_item.name }}</p>
+            }
+        }
+    </div>
+}
+   
+
+

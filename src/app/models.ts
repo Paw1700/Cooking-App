@@ -1,4 +1,4 @@
-export type AppLocations = 'home' | 'recipes_list' | 'recipe'
+export type AppLocations = 'home' | 'recipes_list' | 'recipe' | 'add_recipe'
 
 export interface Category {
     id: string,

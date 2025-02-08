@@ -19,13 +19,13 @@ import { APP_SERVICE } from './app.service';
 
   `
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
   private readonly contexts = inject(ChildrenOutletContexts)
   private APP = inject(APP_SERVICE)
 
-  ngOnInit(): void {
-    this.APP.startApp()
-  }
+  // ngOnInit(): void {
+  //    this.APP.startApp()
+  // }
 
   protected getRouteAnimationData() {
     return this.contexts.getContext('primary')?.route?.snapshot?.data?.['page_name'];
